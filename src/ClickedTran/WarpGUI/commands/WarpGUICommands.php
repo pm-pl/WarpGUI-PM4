@@ -22,11 +22,11 @@ class WarpGUICommands extends BaseCommand {
     
     public function prepare(): void{
       $this->setPermission("warpgui.command");
-      $this->registerSubcommand(new CreateWarpCommand("create", "§o§7Create New Warp Command"));
-      $this->registerSubcommand(new HelpWarpCommand("help", "§o§7Help WarpGUI Command"));
-      $this->registerSubcommand(new SetupWarpCommand("setup", "§o§7Setup Warp Command"));
-      $this->registerSubcommand(new RemoveWarpCommand("remove", "§o§7Remoge Warp Command"));
-      $this->registerSubcommand(new ListWarpCommand("list", "§o§7List Warp Command"));
+      $this->registerSubcommand(new CreateWarpCommand($this->plugin, "create", "§o§7Create New Warp Command"));
+      $this->registerSubcommand(new HelpWarpCommand($this->plugin, "help", "§o§7Help WarpGUI Command"));
+      $this->registerSubcommand(new SetupWarpCommand($this->plugin, "setup", "§o§7Setup Warp Command"));
+      $this->registerSubcommand(new RemoveWarpCommand($this->plugin, "remove", "§o§7Remoge Warp Command"));
+      $this->registerSubcommand(new ListWarpCommand($this->plugin, "list", "§o§7List Warp Command"));
     }
     
     public function onRun(CommandSender $sender, String $aliasUsed, Array $args): void{
@@ -45,3 +45,4 @@ class WarpGUICommands extends BaseCommand {
         // TODO: Implement getPermission() method.
     }
 }
+
